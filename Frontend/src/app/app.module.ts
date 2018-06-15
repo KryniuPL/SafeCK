@@ -8,14 +8,16 @@ import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 // Services
 import { UserRestService } from '../app/rest/services/user-rest.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
   { path: 'login', component : LoginComponent},
-  { path: 'register', component : RegistrationComponent}
+  { path: 'register', component : RegistrationComponent},
+  { path: 'dashboard', component : DashboardComponent},
 ];
 
 @NgModule({
@@ -25,8 +27,10 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
+    DashboardComponent
   ],
   imports: [
+    MatSnackBarModule,
     MatCardModule,
     RouterModule.forRoot(
       appRoutes,
