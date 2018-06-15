@@ -8,4 +8,5 @@ class SafeCkApplication
 
 fun main(args: Array<String>) {
     runApplication<SafeCkApplication>(*args)
+    print("test")
 }
