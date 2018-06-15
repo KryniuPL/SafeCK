@@ -1,19 +1,18 @@
 package com.idea.kielce.hackathon.stay_null_safe.SafeCK.models
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
 data class User (
-        @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long = 0,
-
         var username: String = "",
         var password: String = "",
-
-        var skills: List<Alert> = mutableListOf(),
-
+        @OneToMany
+        @Column(name = "skillId")
+        var skills: List<Skill> = mutableListOf(),
+        @OneToMany
+        @Column(name = "alertId")
         var alerts: List<Alert> = mutableListOf()
 )
