@@ -7,7 +7,7 @@ import { RegistrationComponent } from '../app/registration/registration.componen
 import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {MatCardModule} from '@angular/material/card';
 
 // Services
 import { UserRestService } from '../app/rest/services/user-rest.service';
@@ -27,6 +27,7 @@ const appRoutes: Routes = [
     RegistrationComponent,
   ],
   imports: [
+    MatCardModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
