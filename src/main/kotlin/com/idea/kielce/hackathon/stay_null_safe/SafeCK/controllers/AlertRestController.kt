@@ -1,5 +1,6 @@
 package com.idea.kielce.hackathon.stay_null_safe.SafeCK.controllers
 
+import com.idea.kielce.hackathon.stay_null_safe.SafeCK.enums.Statuses
 import com.idea.kielce.hackathon.stay_null_safe.SafeCK.models.Alert
 import com.idea.kielce.hackathon.stay_null_safe.SafeCK.repositories.AlertRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -11,12 +12,12 @@ import java.util.*
 class AlertRestController {
 
     @Autowired
-    lateinit var alertRepository: AlertRepository
+    internal lateinit var alertRepository: AlertRepository
 
     @GetMapping
     fun getAlerts(): List<Alert> = alertRepository.findAll()
 
-    @GetMapping("/{id}")
+    @GetMapping("/id={id}")
     fun getAlert(@PathVariable("id") id: Long): Optional<Alert> = alertRepository.findById(id)
 
     @PostMapping
@@ -24,5 +25,14 @@ class AlertRestController {
 
     @DeleteMapping
     fun deleteAlert(@RequestBody alert: Alert): Unit = alertRepository.delete(alert)
+
+    @GetMapping("/category={categoryName}")
+    fun getAlertsByCategory(@PathVariable("categoryName") categoryName: String): List<Alert> = alertRepository.findByCategory(categoryName)
+
+    @GetMapping("/status={statusName}")
+    fun getAlertsByStatus(@PathVariable("statusName") statusName: String): List<Alert> = alertRepository.findByStatus(statusName)
+
+
+
 
 }
