@@ -1,6 +1,5 @@
 package com.idea.kielce.hackathon.stay_null_safe.SafeCK.controllers
 
-import com.idea.kielce.hackathon.stay_null_safe.SafeCK.enums.Statuses
 import com.idea.kielce.hackathon.stay_null_safe.SafeCK.models.Alert
 import com.idea.kielce.hackathon.stay_null_safe.SafeCK.repositories.AlertRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -31,8 +30,5 @@ class AlertRestController {
 
     @GetMapping("/status={statusName}")
     fun getAlertsByStatus(@PathVariable("statusName") statusName: String): List<Alert> = alertRepository.findByStatus(statusName)
-
-
-
 
 }
