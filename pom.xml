@@ -61,6 +61,13 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.airhacks</groupId>
+			<artifactId>jaxrs-cors</artifactId>
+			<version>0.0.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>

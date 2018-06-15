@@ -7,6 +7,6 @@ import javax.persistence.Id
 @Entity
 data class Status(
         @Id @GeneratedValue
-        val id: Long? = null,
+        val id: Long = 0,
         val  statusName: String = ""
 )

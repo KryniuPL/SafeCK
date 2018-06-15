@@ -7,12 +7,10 @@ data class Alert (
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
         var Id: Long = 0,
         var text: String = "",
-        @ManyToOne
-        var owner: User,
         @OneToOne
-        var category: Category,
+        var category: Category? = null,
         @OneToOne
-        var status: Status,
-        var latitude: Double,
-        var longitude: Double
+        var status: Status? = null,
+        var latitude: Double = 0.0,
+        var longitude: Double = 0.0
 )
