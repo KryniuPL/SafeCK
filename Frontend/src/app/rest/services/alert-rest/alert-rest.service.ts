@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { rootUrl } from '../../HttpConfiguration';
 import { Alert } from '../../../models/alert';
+import { Observable } from 'rxjs';
 
 
 
@@ -10,36 +11,29 @@ import { Alert } from '../../../models/alert';
 })
 export class AlertRestService {
 
-  usersURL = '/alert';
+  alertURL = '/alert';
+
+  alerts: Alert[];
 
   constructor(private http: HttpClient) {
   }
 
-   getAlerts() {
-    let alerts: Alert[];
-    this.http.get(rootUrl + this.usersURL, {
-      headers:
-      {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-      },
-    }).subscribe(result => {
-        alerts = result as Alert[];
-      }, error => console.error(error)
-    );
-    return alerts;
+   getAlerts(): Observable<Alert[]> {
+    return this.http.get<Alert[]>(rootUrl + this.alertURL);
    }
 
-   getAlert(id: Number) {
-    this.http.get(rootUrl + this.usersURL + '/' + id, {
+   getAlert(id: Number): Alert {
+     let alert: Alert;
+    this.http.get(rootUrl + this.alertURL + '/' + id, {
       headers:
       {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
       },
     }).subscribe(result => {
-        return result as Alert;
+        alert = result as Alert;
       }, error => console.error(error)
     );
+    return alert;
    }
 }

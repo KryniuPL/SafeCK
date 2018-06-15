@@ -3,6 +3,7 @@ import { Alert } from '../models/alert';
 
 import { MouseEvent } from '@agm/core';
 import { AlertRestService } from '../rest/services/alert-rest/alert-rest.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
     selector: 'app-alert-map',
@@ -16,7 +17,7 @@ export class AlertMapComponent implements OnInit {
 
     zoom = 12;
 
-    alerts: Alert[];
+    alerts: Observable<Alert[]>;
 
     constructor(private alertRestService: AlertRestService) { }
 
@@ -32,5 +33,7 @@ export class AlertMapComponent implements OnInit {
         }
 
         this.alerts = this.alertRestService.getAlerts();
+        console.log('here');
+        console.log(this.alerts);
     }
 }
