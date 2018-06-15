@@ -25,19 +25,15 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-   
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-<<<<<<< HEAD
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-=======
->>>>>>> refs/remotes/origin/master
     BrowserModule
   ],
   providers: [UserRestService],
