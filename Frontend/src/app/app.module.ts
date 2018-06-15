@@ -21,6 +21,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AlertMapComponent } from './alert-map/alert-map.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
+import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegistrationComponent,
     AlertMapComponent,
-    DashboardComponent
+    DashboardComponent,
+    MainpageInfoComponent
   ],
   imports: [
     MatSnackBarModule,
