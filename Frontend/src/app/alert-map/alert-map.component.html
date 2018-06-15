@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<button mat-fab class="md-fab md-fab-bottom-right" color="primary" >
+    <i class="material-icons"> add</i>
+</button>
+
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
+
+  <agm-marker *ngFor="let marker of alerts" [latitude]="marker.latitude" [longitude]="marker.longitude" [label]="marker.text"
+    [markerDraggable]="false" [iconUrl]="'../../assets/icons/baseline_place_black_18dp.ico'">
+
+    <!-- OnClick -->
+    
+  </agm-marker>
+</agm-map>

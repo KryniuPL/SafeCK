@@ -8,4 +8,6 @@ export class Alert {
     owner: User;
     category: Category;
     status: Status;
+    latitude: Number;
+    longitude: Number;
 }

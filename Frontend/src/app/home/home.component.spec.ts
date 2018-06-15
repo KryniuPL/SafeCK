@@ -22,5 +22,5 @@ describe("HomeComponent", () => {
   it("should be able to create component instance", () => {
     expect(component).toBeDefined();
   });
-  
+
 });
