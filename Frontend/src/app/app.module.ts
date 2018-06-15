@@ -7,6 +7,7 @@ import { RegistrationComponent } from '../app/registration/registration.componen
 import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { UserRestService } from '../app/rest/services/user-rest/user-rest.service';
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [UserRestService, AlertRestService],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Alert } from '../models/alert';
 
 import { MouseEvent } from '@agm/core';
+import { AlertRestService } from '../rest/services/alert-rest/alert-rest.service';
 
 @Component({
     selector: 'app-alert-map',
@@ -17,7 +18,7 @@ export class AlertMapComponent implements OnInit {
 
     alerts: Alert[];
 
-    constructor() { }
+    constructor(private alertRestService: AlertRestService) { }
 
     ngOnInit() {
         if (navigator.geolocation) {
@@ -29,5 +30,7 @@ export class AlertMapComponent implements OnInit {
             this.lat = 52.2296756;
             this.lng = 21.012228700000037;
         }
+
+        this.alerts = this.alertRestService.getAlerts();
     }
 }

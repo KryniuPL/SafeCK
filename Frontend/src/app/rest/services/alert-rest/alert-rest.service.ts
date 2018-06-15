@@ -16,6 +16,7 @@ export class AlertRestService {
   }
 
    getAlerts() {
+    let alerts: Alert[];
     this.http.get(rootUrl + this.usersURL, {
       headers:
       {
@@ -23,9 +24,10 @@ export class AlertRestService {
         'Content-Type': 'application/json'
       },
     }).subscribe(result => {
-        return result as Alert[];
+        alerts = result as Alert[];
       }, error => console.error(error)
     );
+    return alerts;
    }
 
    getAlert(id: Number) {
