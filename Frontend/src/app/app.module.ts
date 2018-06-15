@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
-import { UserRestService } from '../app/rest/services/user-rest.service';
+import { UserRestService } from '../app/rest/services/user-rest/user-rest.service';
 
 // Material
 import { MatCardModule } from '@angular/material/card';
@@ -20,6 +20,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 // Services
 import { AlertMapComponent } from './alert-map/alert-map.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserModule
   ],
-  providers: [UserRestService],
+  providers: [UserRestService, AlertRestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
