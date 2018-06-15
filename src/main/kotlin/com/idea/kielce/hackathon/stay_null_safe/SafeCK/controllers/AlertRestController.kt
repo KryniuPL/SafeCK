@@ -11,12 +11,12 @@ import java.util.*
 class AlertRestController {
 
     @Autowired
-    lateinit var alertRepository: AlertRepository
+    internal lateinit var alertRepository: AlertRepository
 
     @GetMapping
     fun getAlerts(): List<Alert> = alertRepository.findAll()
 
-    @GetMapping("/{id}")
+    @GetMapping("/id={id}")
     fun getAlert(@PathVariable("id") id: Long): Optional<Alert> = alertRepository.findById(id)
 
     @PostMapping
@@ -24,5 +24,11 @@ class AlertRestController {
 
     @DeleteMapping
     fun deleteAlert(@RequestBody alert: Alert): Unit = alertRepository.delete(alert)
+
+    @GetMapping("/category={categoryName}")
+    fun getAlertsByCategory(@PathVariable("categoryName") categoryName: String): List<Alert> = alertRepository.findByCategory(categoryName)
+
+    @GetMapping("/status={statusName}")
+    fun getAlertsByStatus(@PathVariable("statusName") statusName: String): List<Alert> = alertRepository.findByStatus(statusName)
 
 }
