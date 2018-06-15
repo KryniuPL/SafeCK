@@ -12,6 +12,7 @@ data class Alert (
         @OneToOne
         var category: Category,
         @OneToOne
-        var status: Status
-
+        var status: Status,
+        var latitude: Double,
+        var longitude: Double
 )

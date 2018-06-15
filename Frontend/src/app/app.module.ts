@@ -7,9 +7,18 @@ import { RegistrationComponent } from '../app/registration/registration.componen
 import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+
 // Services
+import { UserRestService } from '../app/rest/services/user-rest/user-rest.service';
+
+// Material
+import { MatCardModule } from '@angular/material/card';
+import { AgmCoreModule } from '@agm/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+// Services
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -46,7 +55,6 @@ import {
 } from '@angular/material';
 
 
-import { UserRestService } from '../app/rest/services/user-rest.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarLoggedComponent } from '../app/navbar-loggedIn/navbar-logged.component'
 import { SidebarComponent } from '../app/dashboard/sidebar/sidebar.component'
@@ -55,12 +63,17 @@ import { ProfileComponent } from '../app/dashboard/profile/profile.component'
 import { PointsComponent } from '../app/dashboard/points/points.component'
 import { SkillsComponent } from '../app/dashboard/skills/skills.component';
 import {MatTableModule} from '@angular/material/table';
+import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
+import { AlertMapComponent } from './alert-map/alert-map.component';
+import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
   { path: 'login', component : LoginComponent},
   { path: 'register', component : RegistrationComponent},
+  { path: 'map', component : AlertMapComponent},
   { path: 'dashboard', component : DashboardComponent},
+
 ];
 
 @NgModule({
@@ -76,15 +89,24 @@ const appRoutes: Routes = [
     MyTabComponent,
     ProfileComponent,
     PointsComponent,
-    SkillsComponent
+    SkillsComponent,
+    AlertMapComponent,
+    DashboardComponent,
+    MainpageInfoComponent
+
   ],
   imports: [
     MatSnackBarModule,
     MatCardModule,
+    MatButtonModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    // AGM
+    AgmCoreModule.forRoot({
+      apiKey: 'Maybe another time ;)'
+    }),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -121,9 +143,10 @@ const appRoutes: Routes = [
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule
+  MatTreeModule,
+ HttpClientModule
   ],
-  providers: [UserRestService],
+  providers: [UserRestService, AlertRestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
