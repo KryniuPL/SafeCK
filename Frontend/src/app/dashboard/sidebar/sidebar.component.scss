@@ -1,0 +1,131 @@
+.nav-side-menu {
+    overflow: auto;
+    font-family: verdana;
+    font-size: 1em;
+    background-color: #2e353d;
+    position: absolute;
+    /* margin-top: 3.5em; */
+    width: 16%;
+    height: 100%;
+    color: #e1ffff;
+  }
+  
+  .nav-side-menu .brand {
+    background-color: #23282e;
+    line-height: 4em;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .nav-side-menu ul,
+  .nav-side-menu li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+  }
+  
+  .nav-side-menu li {
+    padding-left: 0px;
+    border-left: 3px solid #2e353d;
+    border-bottom: 1px solid #23282e;
+  }
+  
+  .nav-side-menu li a {
+    text-decoration: none;
+    color: #e1ffff;
+  }
+    
+  .nav-side-menu li:hover {
+    border-left: 3px solid #d19b3d;
+    background-color: #4f5b69;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  
+  .icons {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-size: 1.25rem;
+    height: 2em;
+  }
+  
+  @media (min-width: 250px) {
+    .nav-side-menu .menu-list .menu-content {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+  
+    .nav-side-menu {
+      width: 25%;
+    }
+  
+    
+    .menu-list > * {
+      font-size: 0.7em;
+      line-height: 3em;
+    }
+  
+    .icons {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-size: 1em;
+      height: 2em;
+    }
+  
+    .brand {
+      font-size: 0.75em !important;
+    }
+  }
+  
+  
+  /* ===================================================== */
+  
+  .nav-tabs { 
+    border-bottom: 2px solid #DDD; 
+  }
+  
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { 
+    border-width: 0; 
+  }
+  
+  .nav-tabs > li > a { 
+    border: none; color: #666; 
+  }
+        
+  .nav-tabs > li.active > a, .nav-tabs > li > a:hover { 
+    border: none; 
+    color: #4285F4 !important; 
+    background: transparent; 
+  }
+  
+  .nav-tabs > li > a::after { 
+    content: ""; 
+    background: #4285F4; 
+    height: 2px; 
+    position: absolute; 
+    width: 100%; 
+    left: 0px; 
+    bottom: -1px; 
+    transition: all 250ms ease 0s; 
+    transform: scale(0); 
+  }
+    
+  .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { 
+    transform: scale(1); 
+  }
+  
+  .tab-nav > li > a::after { 
+    background: #21527d none repeat scroll 0% 0%; 
+    color: #fff; 
+  }

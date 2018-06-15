@@ -10,8 +10,51 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 // Services
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
+
+
 import { UserRestService } from '../app/rest/services/user-rest.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarLoggedComponent } from '../app/navbar-loggedIn/navbar-logged.component'
+import { SidebarComponent } from '../app/dashboard/sidebar/sidebar.component'
+import { MyTabComponent } from '../app/dashboard/my-tab/my-tab.component'
+import { ProfileComponent } from '../app/dashboard/profile/profile.component'
+import { PointsComponent } from '../app/dashboard/points/points.component'
+import { SkillsComponent } from '../app/dashboard/skills/skills.component';
+import {MatTableModule} from '@angular/material/table';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -27,7 +70,13 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarLoggedComponent,
+    SidebarComponent,
+    MyTabComponent,
+    ProfileComponent,
+    PointsComponent,
+    SkillsComponent
   ],
   imports: [
     MatSnackBarModule,
@@ -39,7 +88,40 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    MatTableModule,
+    MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule
   ],
   providers: [UserRestService],
   bootstrap: [AppComponent]

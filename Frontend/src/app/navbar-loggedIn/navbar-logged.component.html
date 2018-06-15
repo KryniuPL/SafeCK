@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="../../assets/icons/donation.png">
+        <a class="navbar-brand" style="margin-left: 10px" href="/">Receive&Help</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="goToHome()">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"(click)="continueToTravel()">Travel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="continueToRouteMap()">Routes Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="continueTimeTable()">Time Table</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="continueAbout()">About</a>
+        </li>  
+      </ul>
+      <!-- ====================================================================== -->
+      <button class="btn btn-outline-danger mr-sm-2" (click)="logout()" type="submit">Wyloguj</button>
+  
+  
+      <div class="dropdown">
+        <div *ngIf="notifications; else empty">
+          <i class="material-icons">notifications_active</i>
+          <div class="dropdown-content">
+            <p *ngFor="let notification of notificationsList">{{ notification.title }}</p>         
+          </div>
+        </div>
+        
+      </div>
+  
+    </div>
+  </nav>

@@ -1,0 +1,22 @@
+<div class="nav-side-menu">
+    <div class="brand">Jan Kowalski</div>
+    <i class="toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+      <ul id="menu-content" role="tablist">
+        <li role="presentation" routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+          <a class="nav-link" href="{{menuItem.path}}" aria-controls="dashboard" role="tab" data-toggle="tab">
+            <table id="icon"><tr><td><i class="icons">{{menuItem.icon}}</i></td><td>{{menuItem.title}}</td></tr></table>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="my-tab"><app-my-tab></app-my-tab></div>
+    <div role="tabpanel" class="tab-pane" id="user-profile"><app-profile></app-profile></div>
+    <div role="tabpanel" class="tab-pane" id="points"><app-points></app-points></div>
+    <div role="tabpanel" class="tab-pane" id="skills"><app-skills></app-skills></div>
+    <div role="tabpanel" class="tab-pane" id="settings"></div>
+    <div role="tabpanel" class="tab-pane" id="admin-panel" (click)="logout()"></div>
+  </div>
