@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '../app/home/home.component'
-import { LoginComponent } from '../app/login/login.component'
-import { RegistrationComponent } from '../app/registration/registration.component'
-import { NavbarComponent } from '../app/navbar/navbar.component'
+import { HomeComponent } from '../app/home/home.component';
+import { LoginComponent } from '../app/login/login.component';
+import { RegistrationComponent } from '../app/registration/registration.component';
+import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+// Services
+import { UserRestService } from '../app/rest/services/user-rest.service';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -29,12 +32,15 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+<<<<<<< HEAD
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+=======
+>>>>>>> refs/remotes/origin/master
     BrowserModule
   ],
-  providers: [],
+  providers: [UserRestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
