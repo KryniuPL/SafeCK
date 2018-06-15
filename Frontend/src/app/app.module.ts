@@ -15,13 +15,56 @@ import { UserRestService } from '../app/rest/services/user-rest/user-rest.servic
 // Material
 import { MatCardModule } from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
-import { MatButtonModule } from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // Services
-import { AlertMapComponent } from './alert-map/alert-map.component';
+
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
+
+
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarLoggedComponent } from '../app/navbar-loggedIn/navbar-logged.component'
+import { SidebarComponent } from '../app/dashboard/sidebar/sidebar.component'
+import { MyTabComponent } from '../app/dashboard/my-tab/my-tab.component'
+import { ProfileComponent } from '../app/dashboard/profile/profile.component'
+import { PointsComponent } from '../app/dashboard/points/points.component'
+import { SkillsComponent } from '../app/dashboard/skills/skills.component';
+import {MatTableModule} from '@angular/material/table';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
+import { AlertMapComponent } from './alert-map/alert-map.component';
 import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
 
 const appRoutes: Routes = [
@@ -40,9 +83,17 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
+    DashboardComponent,
+    NavbarLoggedComponent,
+    SidebarComponent,
+    MyTabComponent,
+    ProfileComponent,
+    PointsComponent,
+    SkillsComponent,
     AlertMapComponent,
     DashboardComponent,
     MainpageInfoComponent
+
   ],
   imports: [
     MatSnackBarModule,
@@ -60,7 +111,40 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpClientModule
+    MatTableModule,
+    MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+ HttpClientModule
   ],
   providers: [UserRestService, AlertRestService],
   bootstrap: [AppComponent]
