@@ -6,6 +6,8 @@ import { LoginComponent } from '../app/login/login.component'
 import { RegistrationComponent } from '../app/registration/registration.component'
 import { NavbarComponent } from '../app/navbar/navbar.component'
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+   
   ],
   imports: [
     RouterModule.forRoot(
@@ -27,7 +30,9 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
-    
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

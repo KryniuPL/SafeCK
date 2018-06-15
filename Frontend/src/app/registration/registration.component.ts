@@ -1,4 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  NgModule,
+  Component,
+  Pipe,
+  OnInit
+} from '@angular/core';
 import {
   ReactiveFormsModule,
   FormsModule,
@@ -7,6 +12,8 @@ import {
   Validators,
   FormBuilder
 } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 
 
@@ -18,34 +25,45 @@ import {
 
 export class RegistrationComponent implements OnInit {
   
+
   myform: FormGroup;
   firstName: FormControl;
+  username: FormControl;
   lastName: FormControl;
   email: FormControl;
-  username: FormControl;
   password: FormControl;
 
-  constructor() { 
 
-  }
 
   ngOnInit() {
+    this.createFormControls();
+    this.createForm();
+  }
+
+  createFormControls() {
+    this.firstName = new FormControl('', Validators.required);
+    this.lastName = new FormControl('', Validators.required);
+    this.username = new FormControl('', Validators.required);
+    this.email = new FormControl('', [
+      Validators.required,
+      Validators.pattern("[^ @]*@[^ @]*")
+    ]);
+    this.password = new FormControl('', [
+      Validators.required,
+      Validators.minLength(8)
+    ]);
+  }
+
+  createForm() {
     this.myform = new FormGroup({
       name: new FormGroup({
-          username: new FormControl('',Validators.required),
-          firstName: new FormControl('', Validators.required), 
-          lastName: new FormControl('', Validators.required),
+        firstName: this.firstName,
+        lastName: this.lastName,
+        username: this.username
       }),
-      email: new FormControl('', [ 
-          Validators.required,
-          Validators.pattern("[^ @]*@[^ @]*") 
-      ]),
-      password: new FormControl('', [
-          Validators.minLength(8), 
-          Validators.required
-      ]),
-      language: new FormControl() 
-  });
-}
+      email: this.email,
+      password: this.password,
+    });
+  }
 
 }
