@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { User } from '../models/user';
 
 
 
@@ -25,7 +26,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 export class RegistrationComponent implements OnInit {
   
-
+  user: User;
   myform: FormGroup;
   firstName: FormControl;
   username: FormControl;
@@ -38,6 +39,22 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     this.createFormControls();
     this.createForm();
+  }
+
+  checkIfDataIsCorrect(){
+    if(this.firstName.hasError('required') || this.lastName.hasError('required')
+       || this.username.hasError('required') ||  this.email.hasError('required')
+       || this.email.hasError('pattern')
+        || this.password.hasError('required') || this.password.hasError('minLength') ) return true;
+      else return false;
+  }
+
+  registerUser(){
+
+    console.log(this.checkIfDataIsCorrect());
+
+
+
   }
 
   createFormControls() {

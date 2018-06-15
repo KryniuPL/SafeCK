@@ -8,19 +8,26 @@ import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Services
+import { UserRestService } from '../app/rest/services/user-rest.service';
+
+// Material
 import { MatCardModule } from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // Services
-import { UserRestService } from '../app/rest/services/user-rest.service';
 import { AlertMapComponent } from './alert-map/alert-map.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
   { path: 'login', component : LoginComponent},
   { path: 'register', component : RegistrationComponent},
-  { path: 'map', component : AlertMapComponent}
+  { path: 'map', component : AlertMapComponent},
+  { path: 'dashboard', component : DashboardComponent},
+
 ];
 
 @NgModule({
@@ -30,9 +37,11 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    AlertMapComponent
+    AlertMapComponent,
+    DashboardComponent
   ],
   imports: [
+    MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
     RouterModule.forRoot(
