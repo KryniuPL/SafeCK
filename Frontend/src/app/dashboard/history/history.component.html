@@ -1,0 +1,70 @@
+<mat-card class="card2">
+    <div class="text-center">
+                <br>
+        <h2>Twoja Pomoc</h2>
+    </div>
+    <div class="card-body">
+            <h4>Pomogłeś Ani Domagale</h4>
+            <br>
+            <div class="">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>Rodzaj zdarzenia</th>
+                  <th>Data zdarzenia</th>
+                  <th>Realizacja</th>
+                  <th>Zadowolenie Ani</th>
+                  <th style="text-align: center;">Ocena</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Problem drogowy</td>
+                    <td>10.07.2012</td>
+                    <td>Prawidłowa</td>
+                    <td>4/5</td>
+                    <td><mat-card-actions>
+                      <div class="text-center">
+                        <button [style.backgroundColor]="color" id="submit" (click)="openAddDialog()" mat-raised-button color="primary">Wystaw ocenę</button>
+                      </div>
+                    </mat-card-actions>
+                  </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+             
+              <div class="text-center">
+                  <h2>Pomoc dla Ciebie</h2>
+              </div>
+              <br>
+              <h4>Andrzej Kowalik udzielił Ci pomocy</h4>
+              <br>
+              <table class="table">
+                  <thead class="text-primary">
+                        <th>Rodzaj zdarzenia</th>
+                        <th>Data zdarzenia</th>
+                        <th>Realizacja</th>
+                        <th>Zadowolenie Andrzeja</th>
+                        <th style="text-align: center;">Ocena</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                            <td>Praca fizyczna</td>
+                            <td>15.07.2012</td>
+                            <td>Prawidłowa</td>
+                            <td>5/5</td>
+                            <td><mat-card-actions>
+                              <div class="text-center">
+                                <button [style.backgroundColor]="color" id="submit" (click)="openAddDialog2()" mat-raised-button color="primary">Wystaw ocenę</button>
+                              </div>
+                      </mat-card-actions>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      
+            
+          </div>
+
+</mat-card>

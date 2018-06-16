@@ -29,7 +29,7 @@ export class AlertMapComponent implements OnInit {
 
     openAddDialog() {
         const dialogRef = this.dialog.open(AddAlertComponent, {
-          height: '350px',
+          height: '600px',
           width: '500px'
         });
 
@@ -79,6 +79,14 @@ export class AlertMapComponent implements OnInit {
         {value: 'tacos-2', viewValue: 'Pomoc w zakupach'},
         {value: 'tacos-3', viewValue: 'Pomoc w przemieszczaniu się'},
         {value: 'tacos-4', viewValue: 'Inne'},
+      ];
+
+      importance = [
+        {value: 0, viewValue: 'Krytyczne'},
+        {value: 1, viewValue: 'Bardzo ważne'},
+        {value: 2, viewValue: 'Ważne'},
+        {value: 3, viewValue: 'Mniej ważne'},
+        {value: 4, viewValue: 'Może poczekać'},
       ];
 
   }

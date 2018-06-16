@@ -2,17 +2,37 @@
 
 <mat-dialog-content class="text-center">
 
-  <mat-form-field style="width: 300px">
-    <input matInput [(ngModel)]="name" placeholder="Imię i nazwisko" >
-  </mat-form-field>
-  <br>
-  <mat-form-field style="width: 300px">
-    <mat-select placeholder="Choose category" [(ngModel)]="selectedValue" name="category">
-      <mat-option *ngFor="let category of categories" [value]="category.value">
-        {{category.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <form class="example-form">
+        <mat-form-field style="width: 300px">
+            <input matInput width="300px" placeholder="Nazwa zdarzenia" value="">
+          </mat-form-field>
+
+          <br>
+      
+          <mat-form-field style="width: 300px">
+            <input matInput width="300px" placeholder="Krótki opis zdarzenia" value="">
+          </mat-form-field>
+      </form>
+
+  <div class="mat-from-filter">
+    <mat-form-field style="width: 300px">
+      <mat-select placeholder="Wybierz kategorie" [(ngModel)]="selectedValue" name="category">
+        <mat-option *ngFor="let cat of categories" [value]="cat.value">
+          {{cat.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mat-from-filter">
+    <mat-form-field style="width: 300px">
+      <mat-select placeholder="Wybierz ważność" [(ngModel)]="selectedValue1" name="status">
+        <mat-option *ngFor="let imp of importance" [value]="imp.value">
+          {{imp.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
 
 
@@ -22,6 +42,6 @@
   <br>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
-  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Anuluj</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Dodaj</button>
 </mat-dialog-actions>

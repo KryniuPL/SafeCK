@@ -15,7 +15,7 @@ export const ROUTES: RouteInfo[] = [
   { path: '#user-profile', title: 'Mój Profil',  icon:'person', class: '' },
   { path: '#points', title: 'Moje Punkty',  icon:'list', class: '' },
   { path: '#skills', title: 'Moje Umiejętności',  icon:'payment', class: '' },
-  { path: '#admin-panel', title: 'Historia',  icon:'account_balance', class: '' },
+  { path: '#history', title: 'Historia',  icon:'account_balance', class: '' },
   { path: '#settings', title: 'Ustawienia',  icon:'settings', class: '' }
 ];
 

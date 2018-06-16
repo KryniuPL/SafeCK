@@ -8,14 +8,14 @@ import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HistoryComponent, MarkComponent } from '../app/dashboard/history/history.component'
 // Services
 import { UserRestService } from '../app/rest/services/user-rest/user-rest.service';
 
 // Material
 import { MatCardModule } from '@angular/material/card';
 import { AgmCoreModule } from '@agm/core';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // Services
 
@@ -62,7 +62,7 @@ import { MyTabComponent } from '../app/dashboard/my-tab/my-tab.component'
 import { ProfileComponent } from '../app/dashboard/profile/profile.component'
 import { PointsComponent } from '../app/dashboard/points/points.component'
 import { SkillsComponent, AddSkillComponent } from '../app/dashboard/skills/skills.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
 import { AlertMapComponent, AddAlertComponent, AlertFilterComponent } from './alert-map/alert-map.component';
 import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
@@ -71,12 +71,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RankingComponent } from './ranking/ranking.component';
 
 const appRoutes: Routes = [
-  { path: '', component : HomeComponent},
-  { path: 'login', component : LoginComponent},
-  { path: 'register', component : RegistrationComponent},
-  { path: 'map', component : AlertMapComponent},
-  { path: 'dashboard', component : DashboardComponent},
-  { path: 'ranking', component : RankingComponent},
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'map', component: AlertMapComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'ranking', component: RankingComponent },
 ];
 
 @NgModule({
@@ -98,8 +98,12 @@ const appRoutes: Routes = [
     MainpageInfoComponent,
     AddAlertComponent,
     AddSkillComponent,
+    RankingComponent,
+    HistoryComponent,
     AlertFilterComponent,
-    RankingComponent
+    RankingComponent,
+    MarkComponent
+
 
   ],
   imports: [
@@ -121,45 +125,46 @@ const appRoutes: Routes = [
     BrowserModule,
     MatTableModule,
     MatAutocompleteModule,
-  MatBadgeModule,
-  MatBottomSheetModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatTreeModule,
-  HttpClientModule
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    HttpClientModule
   ],
   entryComponents: [
     AddAlertComponent,
     AddSkillComponent,
-    AlertFilterComponent
+    AlertFilterComponent,
+    MarkComponent
   ],
-  providers: [UserRestService, AlertRestService,DataServiceComponent],
+  providers: [UserRestService, AlertRestService, DataServiceComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
