@@ -26,30 +26,22 @@ export class AlertMapComponent implements OnInit {
 
 
     }
-    
+
     openDialog() {
         const dialogRef = this.dialog.open(AddAlertComponent, {
           height: '350px',
           width: '500px'
         });
-    
+
         dialogRef.afterClosed().subscribe(result => {
           console.log(`Dialog result: ${result}`);
         });
       }
-    
-
 
     ngOnInit() {
 
         this.alertRestService.getAlerts().subscribe(res => {
-            console.log(`swswsws`);
-            console.log(res);
-            
-            this.alerts = res; 
-            console.log(`111111`);
-            console.log(this.alerts);
-
+            this.alerts = res;
         });
 
         if (navigator.geolocation) {
@@ -61,8 +53,6 @@ export class AlertMapComponent implements OnInit {
             this.lat = 52.2296756;
             this.lng = 21.012228700000037;
         }
-
-       
     }
 }
 

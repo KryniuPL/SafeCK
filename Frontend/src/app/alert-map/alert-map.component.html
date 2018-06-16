@@ -1,28 +1,37 @@
 <app-navbar></app-navbar>
 
-<button (click)="openDialog()" mat-fab class="md-fab md-fab-bottom-right" color="primary" >
-    <i class="material-icons"> add</i>
+<button (click)="openDialog()" mat-fab class="md-fab md-fab-bottom-right" color="primary">
+  <i class="material-icons"> add</i>
 </button>
+
+<button (click)="openDialog()" mat-fab class="md-fab md-fab-bottom-left" color="primary">
+    <i class="material-icons"> filter_list</i>
+  </button>
 
 
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
 
-  <agm-marker *ngFor="let marker of alerts" [latitude]="marker?.latitude" [longitude]="marker?.longitude" [label]="marker.text"
-    [markerDraggable]="false" [iconUrl]="'../../assets/icons/baseline_place_black_18dp.ico'" >
+  <agm-marker *ngFor="let marker of alerts" [latitude]="marker?.latitude" [longitude]="marker?.longitude"
+    [markerDraggable]="false" [iconUrl]="'../../assets/icons/baseline_place_black_18dp.ico'">
 
     <agm-info-window *ngIf="true">
-            <div>
-                <h5>{{marker.user.firstName}} {{marker.user.lastName}}</h5>
-                <h5>{{marker.text}}</h5>
-                <p>{{marker.status.statusName}}</p>
-                <p>{{marker.category.name}}</p>
-                <button mat-raised-button color="primary">Accept</button>
-                <button mat-raised-button color="warn" style="margin-left: 10px">Ignore</button>
-            </div>
-          </agm-info-window>
+      <div>
+        <h5>{{marker.user.firstName}} {{marker.user.lastName}}</h5>
+        <h5>{{marker.title}}</h5>
+        <p>
+        Status: {{marker.status.statusName}}<br>
+        Kategoria: {{marker.category.name}}<br>
+        Ważność: {{marker.importance.name}}</p>
+        <p> {{marker.description}}</p>
+        <p>Dodano: {{marker.createDate | date : "HH:mm dd/MM/yy"}}</p>
+        <p><b>Wygaśnie za: {{marker.expirationTime}} min</b></p>
+        <button mat-raised-button color="primary">Accept</button>
+        <button mat-raised-button color="warn" style="margin-left: 10px">Ignore</button>
+      </div>
+    </agm-info-window>
 
     <!-- OnClick -->
-    
+
   </agm-marker>
 </agm-map>
 
