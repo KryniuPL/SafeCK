@@ -68,6 +68,7 @@ import { AlertMapComponent, AddAlertComponent } from './alert-map/alert-map.comp
 import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
 import { DataServiceComponent } from './rest/services/dataService/data-service/data-service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RankingComponent } from './ranking/ranking.component';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -75,7 +76,7 @@ const appRoutes: Routes = [
   { path: 'register', component : RegistrationComponent},
   { path: 'map', component : AlertMapComponent},
   { path: 'dashboard', component : DashboardComponent},
-
+  { path: 'ranking', component : RankingComponent},
 ];
 
 @NgModule({
@@ -96,7 +97,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     MainpageInfoComponent,
     AddAlertComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    RankingComponent
 
   ],
   imports: [
