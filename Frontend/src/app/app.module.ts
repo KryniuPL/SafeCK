@@ -61,7 +61,7 @@ import { SidebarComponent } from '../app/dashboard/sidebar/sidebar.component'
 import { MyTabComponent } from '../app/dashboard/my-tab/my-tab.component'
 import { ProfileComponent } from '../app/dashboard/profile/profile.component'
 import { PointsComponent } from '../app/dashboard/points/points.component'
-import { SkillsComponent } from '../app/dashboard/skills/skills.component';
+import { SkillsComponent, AddSkillComponent } from '../app/dashboard/skills/skills.component';
 import {MatTableModule} from '@angular/material/table';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
 import { AlertMapComponent, AddAlertComponent } from './alert-map/alert-map.component';
@@ -95,7 +95,8 @@ const appRoutes: Routes = [
     AlertMapComponent,
     DashboardComponent,
     MainpageInfoComponent,
-    AddAlertComponent
+    AddAlertComponent,
+    AddSkillComponent
 
   ],
   imports: [
@@ -151,7 +152,8 @@ const appRoutes: Routes = [
  HttpClientModule
   ],
   entryComponents: [
-    AddAlertComponent
+    AddAlertComponent,
+    AddSkillComponent
   ],
   providers: [UserRestService, AlertRestService,DataServiceComponent],
   bootstrap: [AppComponent]
