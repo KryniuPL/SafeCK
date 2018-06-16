@@ -17,11 +17,30 @@ export class AlertMapComponent implements OnInit {
 
     zoom = 12;
 
-    alerts: Observable<Alert[]>;
+    alerts: Alert[];
 
-    constructor(private alertRestService: AlertRestService) { }
+    flag = false;
+
+    constructor(private alertRestService: AlertRestService) {
+
+
+    }
+    
+
+
 
     ngOnInit() {
+
+        this.alertRestService.getAlerts().subscribe(res => {
+            console.log(`swswsws`);
+            console.log(res);
+            
+            this.alerts = res; 
+            console.log(`111111`);
+            console.log(this.alerts);
+
+        });
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.lat = position.coords.latitude;
@@ -32,8 +51,6 @@ export class AlertMapComponent implements OnInit {
             this.lng = 21.012228700000037;
         }
 
-        this.alerts = this.alertRestService.getAlerts();
-        console.log('here');
-        console.log(this.alerts);
+       
     }
 }

@@ -66,6 +66,7 @@ import {MatTableModule} from '@angular/material/table';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
 import { AlertMapComponent } from './alert-map/alert-map.component';
 import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
+import { DataServiceComponent } from './rest/services/dataService/data-service/data-service.component';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -146,7 +147,7 @@ const appRoutes: Routes = [
   MatTreeModule,
  HttpClientModule
   ],
-  providers: [UserRestService, AlertRestService],
+  providers: [UserRestService, AlertRestService,DataServiceComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
