@@ -8,12 +8,16 @@ import { Component, OnInit } from "@angular/core";
 
 export class PointsComponent implements OnInit {
   
-  
+  switch=false;
+
   constructor() { 
 
   }
 
   ngOnInit() {
 
+  }
+  switchSwitcher(){
+    this.switch=true;
   }
 }
