@@ -12,5 +12,8 @@ data class Alert (
         @OneToOne
         var status: Status? = null,
         var latitude: Double = 0.0,
-        var longitude: Double = 0.0
+        var longitude: Double = 0.0,
+        @ManyToOne
+        var user: User?= null
+
 )
