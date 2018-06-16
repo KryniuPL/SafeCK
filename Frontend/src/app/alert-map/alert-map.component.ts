@@ -27,9 +27,19 @@ export class AlertMapComponent implements OnInit {
 
     }
 
-    openDialog() {
+    openAddDialog() {
         const dialogRef = this.dialog.open(AddAlertComponent, {
           height: '350px',
+          width: '500px'
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+
+      openFilterDialog() {
+        const dialogRef = this.dialog.open(AlertFilterComponent, {
           width: '500px'
         });
 
@@ -69,6 +79,41 @@ export class AlertMapComponent implements OnInit {
         {value: 'tacos-2', viewValue: 'Pomoc w zakupach'},
         {value: 'tacos-3', viewValue: 'Pomoc w przemieszczaniu się'},
         {value: 'tacos-4', viewValue: 'Inne'},
+      ];
+
+  }
+
+  @Component({
+    selector: 'filter-alert',
+    templateUrl: 'filter-alert.html',
+    styleUrls: ['alert-map.component.scss']
+  })
+  export class AlertFilterComponent {
+    selectedValue: string;
+    startDate: Date;
+    endDate: Date;
+
+    importance = [
+        {value: 0, viewValue: 'Krytyczne'},
+        {value: 1, viewValue: 'Bardzo ważne'},
+        {value: 2, viewValue: 'Ważne'},
+        {value: 3, viewValue: 'Mniej ważne'},
+        {value: 4, viewValue: 'Może poczekać'},
+      ];
+
+    categories = [
+        {value: 0, viewValue: 'Pomoc Drogowa'},
+        {value: 1, viewValue: 'Opieka nad zwierzętami'},
+        {value: 2, viewValue: 'Pomoc w zakupach'},
+        {value: 3, viewValue: 'Pomoc w przemieszczaniu się'},
+        {value: 4, viewValue: 'Inne'},
+      ];
+
+      statuses = [
+        {value: 0, viewValue: 'Nowe'},
+        {value: 1, viewValue: 'W trakcie'},
+        {value: 2, viewValue: 'Zakończone'},
+        {value: 3, viewValue: 'Oczekujące'},
       ];
 
   }

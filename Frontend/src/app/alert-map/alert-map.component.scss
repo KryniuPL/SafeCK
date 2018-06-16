@@ -5,9 +5,24 @@ agm-map {
     width: 100wh;
   }
 
-.mat-fab {
+.md-fab-bottom-right {
     position: fixed;
     bottom: 50px;
     right: 50px;
     z-index: 100;
+  }
+
+  .md-fab-bottom-left {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    z-index: 100;
+  }
+
+  .mat-from-filter {
+    padding-bottom: 10px;
+  }
+
+  .mat-from-filter-date {
+    padding-right: 10px;
   }

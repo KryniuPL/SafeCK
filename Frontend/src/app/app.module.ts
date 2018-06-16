@@ -64,7 +64,7 @@ import { PointsComponent } from '../app/dashboard/points/points.component'
 import { SkillsComponent, AddSkillComponent } from '../app/dashboard/skills/skills.component';
 import {MatTableModule} from '@angular/material/table';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
-import { AlertMapComponent, AddAlertComponent } from './alert-map/alert-map.component';
+import { AlertMapComponent, AddAlertComponent, AlertFilterComponent } from './alert-map/alert-map.component';
 import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
 import { DataServiceComponent } from './rest/services/dataService/data-service/data-service.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -96,7 +96,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     MainpageInfoComponent,
     AddAlertComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    AlertFilterComponent
 
   ],
   imports: [
@@ -149,11 +150,12 @@ const appRoutes: Routes = [
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
- HttpClientModule
+  HttpClientModule
   ],
   entryComponents: [
     AddAlertComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    AlertFilterComponent
   ],
   providers: [UserRestService, AlertRestService,DataServiceComponent],
   bootstrap: [AppComponent]
