@@ -9,6 +9,15 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class DataServiceComponent {
 
-   
+   private isUserLoggedIn: boolean
+
+   constructor(){
+       this.isUserLoggedIn=false;
+   }
+
+   setUserLoggedIn(){
+       this.isUserLoggedIn=true;
+   }
+   get
 
 }
