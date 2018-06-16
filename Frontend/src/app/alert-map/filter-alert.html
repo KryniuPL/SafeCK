@@ -1,0 +1,55 @@
+<h1 class="text-center" mat-dialog-title>Filtruj znaczniki</h1>
+
+<mat-dialog-content class="text-center">
+
+  <div class="mat-from-filter">
+    <mat-form-field style="width: 300px">
+      <mat-select placeholder="Wybierz kategorie" [(ngModel)]="selectedValue" name="category">
+        <mat-option *ngFor="let element of categories" [value]="element.value">
+          {{element.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mat-from-filter">
+    <mat-form-field style="width: 300px">
+      <mat-select placeholder="Wybierz ważność" [(ngModel)]="selectedValue" name="status">
+        <mat-option *ngFor="let element of importance" [value]="element.value">
+          {{element.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mat-from-filter">
+    <mat-form-field style="width: 300px">
+      <mat-select placeholder="Wybierz status" [(ngModel)]="selectedValue" name="status">
+        <mat-option *ngFor="let element of statuses" [value]="element.value">
+          {{element.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mat-from-filter-date">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Data od">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="mat-from-filter-date">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="Data do">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="warn" mat-dialog-close>Zastosuj</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Anuluj</button>
+</mat-dialog-actions>

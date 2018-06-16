@@ -1,25 +1,25 @@
-<h1 class="text-center" mat-dialog-title>Zgłaszam się o pomoc</h1>
+<h1 class="text-center" mat-dialog-title>Poproś o pomoc</h1>
 
-<mat-dialog-content  class="text-center">
-        
-                  <mat-form-field style="width: 300px">
-                    <input matInput [(ngModel)]="name" placeholder="Imię i nazwisko">
-                  </mat-form-field>
-                  <br>
-                  <mat-form-field style="width: 300px">
-                        <mat-select placeholder="Choose category" [(ngModel)]="selectedValue" name="category">
-                          <mat-option *ngFor="let category of categories" [value]="category.value">
-                            {{category.viewValue}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-               
-                
-              
-<br>
-<br>
-<br>
-<br>
+<mat-dialog-content class="text-center">
+
+  <mat-form-field style="width: 300px">
+    <input matInput [(ngModel)]="name" placeholder="Imię i nazwisko" >
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 300px">
+    <mat-select placeholder="Choose category" [(ngModel)]="selectedValue" name="category">
+      <mat-option *ngFor="let category of categories" [value]="category.value">
+        {{category.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
