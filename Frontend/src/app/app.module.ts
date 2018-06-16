@@ -8,7 +8,7 @@ import { NavbarComponent } from '../app/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HistoryComponent } from '../app/dashboard/history/history.component'
 // Services
 import { UserRestService } from '../app/rest/services/user-rest/user-rest.service';
 
@@ -98,8 +98,8 @@ const appRoutes: Routes = [
     MainpageInfoComponent,
     AddAlertComponent,
     AddSkillComponent,
-    RankingComponent
-
+    RankingComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserAnimationsModule,
