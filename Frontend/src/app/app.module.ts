@@ -64,9 +64,10 @@ import { PointsComponent } from '../app/dashboard/points/points.component'
 import { SkillsComponent } from '../app/dashboard/skills/skills.component';
 import {MatTableModule} from '@angular/material/table';
 import { AlertRestService } from './rest/services/alert-rest/alert-rest.service';
-import { AlertMapComponent } from './alert-map/alert-map.component';
+import { AlertMapComponent, AddAlertComponent } from './alert-map/alert-map.component';
 import { MainpageInfoComponent } from './mainpage-info/mainpage-info.component';
 import { DataServiceComponent } from './rest/services/dataService/data-service/data-service.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: '', component : HomeComponent},
@@ -93,10 +94,12 @@ const appRoutes: Routes = [
     SkillsComponent,
     AlertMapComponent,
     DashboardComponent,
-    MainpageInfoComponent
+    MainpageInfoComponent,
+    AddAlertComponent
 
   ],
   imports: [
+    BrowserAnimationsModule,
     MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
@@ -146,6 +149,9 @@ const appRoutes: Routes = [
   MatTooltipModule,
   MatTreeModule,
  HttpClientModule
+  ],
+  entryComponents: [
+    AddAlertComponent
   ],
   providers: [UserRestService, AlertRestService,DataServiceComponent],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<button mat-fab class="md-fab md-fab-bottom-right" color="primary" >
+<button (click)="openDialog()" mat-fab class="md-fab md-fab-bottom-right" color="primary" >
     <i class="material-icons"> add</i>
 </button>
 
@@ -9,6 +9,16 @@
 
   <agm-marker *ngFor="let marker of alerts" [latitude]="marker?.latitude" [longitude]="marker?.longitude" [label]="marker.text"
     [markerDraggable]="false" [iconUrl]="'../../assets/icons/baseline_place_black_18dp.ico'" >
+
+    <agm-info-window *ngIf="true">
+            <div>
+                <h5>{{marker.text}}</h5>
+                <p>{{marker.status.statusName}}</p>
+                <p>{{marker.category.name}}</p>
+                <button mat-raised-button color="primary">Accept</button>
+                <button mat-raised-button color="warn" style="margin-left: 10px">Ignore</button>
+            </div>
+          </agm-info-window>
 
     <!-- OnClick -->
     

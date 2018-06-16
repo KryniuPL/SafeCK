@@ -4,6 +4,7 @@ import { Alert } from '../models/alert';
 import { MouseEvent } from '@agm/core';
 import { AlertRestService } from '../rest/services/alert-rest/alert-rest.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { MatDialog } from '@angular/material';
 
 @Component({
     selector: 'app-alert-map',
@@ -21,12 +22,22 @@ export class AlertMapComponent implements OnInit {
 
     flag = false;
 
-    constructor(private alertRestService: AlertRestService) {
+    constructor(private alertRestService: AlertRestService,public dialog: MatDialog) {
 
 
     }
     
-
+    openDialog() {
+        const dialogRef = this.dialog.open(AddAlertComponent, {
+          height: '350px',
+          width: '500px'
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+    
 
 
     ngOnInit() {
@@ -54,3 +65,20 @@ export class AlertMapComponent implements OnInit {
        
     }
 }
+
+@Component({
+    selector: 'add-alert',
+    templateUrl: 'add-alert.html',
+  })
+  export class AddAlertComponent {
+    selectedValue: string;
+
+    categories = [
+        {value: 'steak-0', viewValue: 'Pomoc Drogowa'},
+        {value: 'pizza-1', viewValue: 'Opieka nad zwierzętami'},
+        {value: 'tacos-2', viewValue: 'Pomoc w zakupach'},
+        {value: 'tacos-3', viewValue: 'Pomoc w przemieszczaniu się'},
+        {value: 'tacos-4', viewValue: 'Inne'},
+      ];
+
+  }
