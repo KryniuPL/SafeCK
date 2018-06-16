@@ -1,0 +1,8 @@
+<p>Dodaj nową umiejętność aby inni użytkownicy wiedzieli co potrafisz</p>
+<mat-form-field style="width: 90%;">
+        <input matInput [(ngModel)]="data.skill">
+</mat-form-field>
+<div mat-dialog-actions>
+        <button  mat-raised-button color="warn" (click)="onNoClick()">Nie dzięki :)</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="data.skill" cdkFocusInitial>Ok</button>
+</div>

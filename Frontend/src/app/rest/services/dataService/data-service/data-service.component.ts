@@ -18,6 +18,13 @@ export class DataServiceComponent {
    setUserLoggedIn(){
        this.isUserLoggedIn=true;
    }
-   get
+   getUserLoggedIn()
+   {
+       return this.isUserLoggedIn;
+   }
+   logoutUser()
+   {
+       this.isUserLoggedIn=false;
+   }
 
 }
