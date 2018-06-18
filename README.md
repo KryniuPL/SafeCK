@@ -13,7 +13,7 @@ Założenia:
 8. Cena wykonania czynności będzie zależeć od zleceniodawcy przy czym płatność docelowo będzie odbywać się poprzez aplikację celem zwiększenia bezpieczeństwa.
 9. Aplikacja będzie zarówno mobilna jak i webowa.
 
-Kod, koncepcja i kopiowanie założeń zabronione na podstawie praw autorskich.
+Kopiowanie kodu, koncepcji lub założeń zabronione na podstawie praw autorskich.
 
 ## Technologies
 
